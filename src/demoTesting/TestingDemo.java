@@ -26,24 +26,25 @@ public class TestingDemo {
 	@Test
 	public void testDemoSite() {
 		driver.manage().window().maximize();
+		driver.get("http://thedemosi te.co.uk/index.php");
+	}
+	@Test
+	public void testCreate(){
+		driver.get("http://thedemosite.co.uk/addauser.php");
+		
+		driver.findElement(By.name("username")).sendKeys("Frezia");
+		driver.findElement(By.name("password")).sendKeys("pass");
+		WebElement subButton = driver.findElement(By.id("FormsButton2"));
+        subButton.submit();
+	}
+	@Test
+	public void testAccess(){
 		driver.get("http://thedemosite.co.uk/login.php");
-	}
-	
-	@Test
-	public void testUserAccount(){
-		WebElement userName = driver.findElement(By.xpath("/html/body/table/tbody/tr/td[1]/form/div/center/table/tbody/tr/td[1]/table/tbody/tr[1]/td[2]/p/input")).sendKeys(Frezia);
-	}
-	
-	@Test 
-	public void testPassword() {
-		 WebElement passWord = driver.findElement(By.xpath("/html/body/table/tbody/tr/td[1]/form/div/center/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/p/input")).sendKeys(password);
-	}
-	
-	@Test
-	public void testButton() {
-		WebElement subButton = driver.findElement(By.id("/html/body/table/tbody/tr/td[1]/form/div/center/table/tbody/tr/td[1]/table/tbody/tr[3]/td[2]/p/input"));
+		
+		driver.findElement(By.xpath("/html/body/table/tbody/tr/td[1]/form/div/center/table/tbody/tr/td[1]/table/tbody/tr[1]/td[2]/p/input")).sendKeys("Frezia");
+	    driver.findElement(By.xpath("/html/body/table/tbody/tr/td[1]/form/div/center/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/p/input")).sendKeys("pass");
+	    WebElement subButton = driver.findElement(By.id("FormsButton2"));
 	               subButton.submit();
-	}
-
+    }
 }
 
