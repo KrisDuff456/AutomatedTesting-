@@ -24,9 +24,8 @@ public class TestingDemo {
 		driver.quit();
 	}
 	
-	@Test
+	@Test 
 	public void testDemoSite() {
-		
 		driver.get("http://thedemosi te.co.uk/index.php");
 	}
 	@Test
